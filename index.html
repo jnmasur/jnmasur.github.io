@@ -14259,18 +14259,15 @@ a.anchor-link {
 
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Internet-Access-in-New-Orleans">Internet Access in New Orleans<a class="anchor-link" href="#Internet-Access-in-New-Orleans">&#182;</a></h1><p>This webpage (<a href="https://jnmasur.github.io">https://jnmasur.github.io</a>) was created by Jacob Masur and Daniel Cohen to investigate the distribution of internet access in Orleans Parish across geographic regions. We would like to use geographic data to understand how other factors such as race and income affect who has access to the internet.</p>
+<h1 id="Internet-Access-in-Orleans-Parish">Internet Access in Orleans Parish<a class="anchor-link" href="#Internet-Access-in-Orleans-Parish">&#182;</a></h1><h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h2><p>This webpage (<a href="https://jnmasur.github.io">https://jnmasur.github.io</a>) was created by Jacob Masur and Daniel Cohen to investigate the distribution of internet access in Orleans Parish across geographic regions. We would like to uanswer the question: how accessible is wifi in different areas in Orleans Parish? Additionally, we want to find correlations between wifi access and demographic information such as income level, school zone, and ethnicity. It will also be interesting to investigate whether locations that provide access to free internet (for example, public libbraries) are distributed in such a way that free internet access is optimized for those without access in their households. We predict that income level will have a significant impact on access to internet, and since income is not generally equally distributed between ethnic groups, there will likely be a dependence on race as well.</p>
+<h2 id="Collaboration-Plan">Collaboration Plan<a class="anchor-link" href="#Collaboration-Plan">&#182;</a></h2><p>We plan on meeting at least weekly to ensure that we collaborate enough on this project. We have set up a Jupyter notebook for which changes are being tracked and updated regularly in a public Github repository located at <a href="https://github.com/jnmasur/jnmasur.github.io">https://github.com/jnmasur/jnmasur.github.io</a>. The raw data, contained in a CSV file, and the text file that provides a full explanation of the data set is located in a subdirectory on our GitHub page. In general, we will be meeting in person to work on the project together. However, if the need arises, we will temporarily switch to Zoom meetings. Regardless of meeting schedule, we discuss what work needs to be accomplished, what is working well, and what we might need to rethink every few days to ensure that we are maintaining consistent progress.</p>
+<h2 id="NHGIS-Computer-and-Internet-Data">NHGIS Computer and Internet Data<a class="anchor-link" href="#NHGIS-Computer-and-Internet-Data">&#182;</a></h2><p>The first step for this project is determining what data regarding internet access by region is available to us. Valentina Martinez Pabon from the economics department guided us towards two datasets provided by NHGIS containing information from the years 2013-2017. One dataset provides information regarding the precense and types of computers in households, and the other contains information regarding the precense and types of internet substcriptions in households. Both datasets contain census tract level data for the entire country; however, we have already filtered out all data not related to Orleans Parish in our notebook. The data frame (which contains the information from both datasets) we are left with consists of 177 rows (each representing a census tract in Orleans Parish) and 84 columns. NHGIS provides a detailed data dictionary that includes explanations for each variable, so we will have to determine which variables will provide valuable information. This data will allow us to gather insight into how wifi is distributed throughout Orleans Parish. It will also be of interest to compare the dependence of the precense of computation devices in households on other variables to the dependence of the precense of internet subscriptions in households on the same variables. Once we assess how to answer our question further, we will combine our current information with more datasets. We may use 911 datasets to test if areas with more crime are the ones with less wifi access. After we assess the results from the first dataset it will be easier to understand what other data we can bring in for this project.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The first data set we will consider is sourced from NHGIS, it contains census tract data on the type of computers and the precense and types of internet subscriptions in households.<br>
-Source:<br>
-Steven Manson, Jonathan Schroeder, David Van Riper, Tracy Kugler, and Steven Ruggles.<br>
-IPUMS National Historical Geographic Information System: Version 16.0<br>
-2017 American Community Survey: 5-Year Data [2013-2017, Tracts &amp; Larger Areas]. Minneapolis, MN: IPUMS. 2021.<br>
-<a href="http://doi.org/10.18128/D050.V16.0">http://doi.org/10.18128/D050.V16.0</a></p>
+<p>The first data sets we will consider is sourced from NHGIS, it contains census tract data on the type of computers and the precense and types of internet subscriptions in households for the entire country. This data frame is therefore extremely large.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -14479,7 +14476,17 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>This dataset contains data from accross the country, but we are only interested in Orleans Parish data, so we filter the dataset accordingly.</p>
+<p>Source:<br>
+Steven Manson, Jonathan Schroeder, David Van Riper, Tracy Kugler, and Steven Ruggles.<br>
+IPUMS National Historical Geographic Information System: Version 16.0<br>
+2017 American Community Survey: 5-Year Data [2013-2017, Tracts &amp; Larger Areas]. Minneapolis, MN: IPUMS. 2021.<br>
+<a href="http://doi.org/10.18128/D050.V16.0">http://doi.org/10.18128/D050.V16.0</a></p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Since we are only interested in Orleans Parish data, we filter the dataset accordingly.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -14687,7 +14694,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Most of the columns in the data set are irrelevant to our investigation, so we will drop many of them.</p>
+<p>There is still much extraneous data contained in this table, and we certainly will not be able to investigate 84 variables. We will have to read the documentation more carefully in order to determine which variables to consider.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
