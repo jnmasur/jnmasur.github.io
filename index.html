@@ -14259,25 +14259,44 @@ a.anchor-link {
 
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Internet-Access-in-Orleans-Parish">Internet Access in Orleans Parish<a class="anchor-link" href="#Internet-Access-in-Orleans-Parish">&#182;</a></h1><h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h2><p>This webpage (<a href="https://jnmasur.github.io">https://jnmasur.github.io</a>) was created by Jacob Masur and Daniel Cohen to investigate the distribution of internet access in Orleans Parish across geographic regions. We would like to uanswer the question: how accessible is wifi in different areas in Orleans Parish? Additionally, we want to find correlations between wifi access and demographic information such as income level, school zone, and ethnicity. It will also be interesting to investigate whether locations that provide access to free internet (for example, public libbraries) are distributed in such a way that free internet access is optimized for those without access in their households. We predict that income level will have a significant impact on access to internet, and since income is not generally equally distributed between ethnic groups, there will likely be a dependence on race as well.</p>
+<p>Jacob Masur and Daniel Cohen</p>
+<h1 id="Internet-Access-in-Orleans-Parish">Internet Access in Orleans Parish<a class="anchor-link" href="#Internet-Access-in-Orleans-Parish">&#182;</a></h1><h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h2><p>This webpage (<a href="https://jnmasur.github.io">https://jnmasur.github.io</a>) was created by Jacob Masur and Daniel Cohen to investigate the distribution of internet access in Orleans Parish across geographic regions. We would like to answer the question: how accessible is wifi in different areas in Orleans Parish? Additionally, we want to find correlations between wifi access and demographic information such as income level, educational attainment, and ethnicity. It will also be interesting to investigate whether locations that provide access to free internet (for example, public libraries) are distributed in such a way that free internet access is optimized for those without access in their households. We predict that income level will have a significant impact on access to internet. In general, people with higher level of eduction also make more money and income is inequally distributed amongst different races, there will likely be a dependence on educational attainment and race.</p>
 <h2 id="Collaboration-Plan">Collaboration Plan<a class="anchor-link" href="#Collaboration-Plan">&#182;</a></h2><p>We plan on meeting at least weekly to ensure that we collaborate enough on this project. We have set up a Jupyter notebook for which changes are being tracked and updated regularly in a public Github repository located at <a href="https://github.com/jnmasur/jnmasur.github.io">https://github.com/jnmasur/jnmasur.github.io</a>. The raw data, contained in a CSV file, and the text file that provides a full explanation of the data set is located in a subdirectory on our GitHub page. In general, we will be meeting in person to work on the project together. However, if the need arises, we will temporarily switch to Zoom meetings. Regardless of meeting schedule, we discuss what work needs to be accomplished, what is working well, and what we might need to rethink every few days to ensure that we are maintaining consistent progress.</p>
-<h2 id="NHGIS-Computer-and-Internet-Data">NHGIS Computer and Internet Data<a class="anchor-link" href="#NHGIS-Computer-and-Internet-Data">&#182;</a></h2><p>The first step for this project is determining what data regarding internet access by region is available to us. Valentina Martinez Pabon from the economics department guided us towards two datasets provided by NHGIS containing information from the years 2013-2017. One dataset provides information regarding the precense and types of computers in households, and the other contains information regarding the precense and types of internet substcriptions in households. Both datasets contain census tract level data for the entire country; however, we have already filtered out all data not related to Orleans Parish in our notebook. The data frame (which contains the information from both datasets) we are left with consists of 177 rows (each representing a census tract in Orleans Parish) and 84 columns. NHGIS provides a detailed data dictionary that includes explanations for each variable, so we will have to determine which variables will provide valuable information. This data will allow us to gather insight into how wifi is distributed throughout Orleans Parish. It will also be of interest to compare the dependence of the precense of computation devices in households on other variables to the dependence of the precense of internet subscriptions in households on the same variables. Once we assess how to answer our question further, we will combine our current information with more datasets. We may use 911 datasets to test if areas with more crime are the ones with less wifi access. After we assess the results from the first dataset it will be easier to understand what other data we can bring in for this project.</p>
+<h2 id="Data-Overview">Data Overview<a class="anchor-link" href="#Data-Overview">&#182;</a></h2><p>For our investigation, we will be using five distinct data sets. The first one contains census tract level information reagrding the type and precense of internet and computers by household for census tracts across the entire country and is provided by <a href="https://www.nhgis.org/">NHGIS</a>. We also obtained 3 other data sets from NHGIS, one providing the racial makeup by census tract, one detailing educational attainment for people 25 years of age or older by census tract, and one containing the median household income also by census tract. This data is the result of the <a href="https://www.census.gov/data/developers/data-sets/acs-5year.html">American Community Survey</a> which is conducted by the Census Bureau and is therefore a highly accurate survey from a trustworthy source. All datasets sourced from NHGIS contain country-wide data, and most contain many variables that are irrelevant to our discussion, so cleaning these sets is essential. The final data set contains geographic information for locations with free publicly accessible internet in Orleans Parish. This data comes from the <a href="https://data.nola.gov/">official New Orleans Database</a> which is also a very trustworthy source. All data sets come from official government sources, so we believe that this data is accurate and will provide a good representation of internet access by race, income, and educational attainment.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The first data sets we will consider is sourced from NHGIS, it contains census tract data on the type of computers and the precense and types of internet subscriptions in households for the entire country. This data frame is therefore extremely large.</p>
+<h2 id="NHGIS-Internet-Data">NHGIS Internet Data<a class="anchor-link" href="#NHGIS-Internet-Data">&#182;</a></h2><p>The first data sets we will consider is sourced from NHGIS, it contains census tract data on the type of computers and the precense and types of internet subscriptions in households for the entire country. This data frame is therefore extremely large.</p>
 
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[46]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># useful libraries</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">pairwise_distances</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[47]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">internet</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;../data/internet_data.csv&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># load the internet access data set</span>
+<span class="n">internet</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;./data/internet_data.csv&quot;</span><span class="p">)</span>
 <span class="n">internet</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
@@ -14294,7 +14313,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[47]:</div>
 
 
 
@@ -14486,13 +14505,18 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Since we are only interested in Orleans Parish data, we filter the dataset accordingly.</p>
+<h3 id="Cleaning-the-Data-Set">Cleaning the Data Set<a class="anchor-link" href="#Cleaning-the-Data-Set">&#182;</a></h3>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>The data set at this point contains a lot of data that is irrelevant to our investigation; we will therefore need to clean the data set, so that it becomes usable. Since we are only interested in Orleans Parish data, we filter the dataset accordingly.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[48]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">internet</span> <span class="o">=</span> <span class="n">internet</span><span class="p">[(</span><span class="n">internet</span><span class="p">[</span><span class="s2">&quot;STATE&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Louisiana&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">internet</span><span class="p">[</span><span class="s2">&quot;COUNTY&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Orleans Parish&quot;</span><span class="p">)]</span>
@@ -14512,7 +14536,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[48]:</div>
 
 
 
@@ -14694,16 +14718,110 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>There is still much extraneous data contained in this table, and we certainly will not be able to investigate 84 variables. We will have to read the documentation more carefully in order to determine which variables to consider.</p>
+<p>There is still much extraneous data contained in this table, and we certainly will not be able to investigate 84 variables. In the next cell, we reduce our consideration to 3 variables: the census tract, the total households surveyed, the number of households without internet access.</p>
 
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[49]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_internet</span> <span class="o">=</span> <span class="n">internet</span><span class="p">[[</span><span class="s2">&quot;TRACTA&quot;</span><span class="p">,</span> <span class="s2">&quot;AIQAE001&quot;</span><span class="p">,</span> <span class="s2">&quot;AIQBE013&quot;</span><span class="p">]]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>The definition of these columns can be found in the data folder on our github. Here we rename the columns according to their definitions, so the column labels provide useful information.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[50]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_internet</span> <span class="o">=</span> <span class="n">df_internet</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;TRACTA&quot;</span><span class="p">:</span> <span class="s2">&quot;Census Tract&quot;</span><span class="p">,</span> <span class="s2">&quot;AIQAE001&quot;</span><span class="p">:</span><span class="s2">&quot;Total&quot;</span><span class="p">,</span> <span class="s2">&quot;AIQBE013&quot;</span><span class="p">:</span><span class="s2">&quot;No Internet&quot;</span><span class="p">})</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>For future analysis, it is also useful to have the number of households with internet access, so we calculate this by subtracting the number of households without internet access from the number of households with internet access.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[51]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_internet</span><span class="p">[</span><span class="s2">&quot;Has Internet&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_internet</span><span class="p">[</span><span class="s2">&quot;Total&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df_internet</span><span class="p">[</span><span class="s2">&quot;No Internet&quot;</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Now, since each observation in the data frame is a census tract, this value is unique, and works well as an index.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[52]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_internet</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;Census Tract&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Some census tracts contain no data, we would like to remove these so we filter out any row in which the total households surveyed is 0.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[53]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_internet</span> <span class="o">=</span> <span class="n">df_internet</span><span class="p">[</span><span class="n">df_internet</span><span class="p">[</span><span class="s2">&quot;Total&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[54]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">internet</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_internet</span>
 </pre></div>
 
      </div>
@@ -14719,7 +14837,489 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[54]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Total</th>
+      <th>No Internet</th>
+      <th>Has Internet</th>
+    </tr>
+    <tr>
+      <th>Census Tract</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>100</th>
+      <td>1404</td>
+      <td>204</td>
+      <td>1200</td>
+    </tr>
+    <tr>
+      <th>200</th>
+      <td>487</td>
+      <td>192</td>
+      <td>295</td>
+    </tr>
+    <tr>
+      <th>300</th>
+      <td>525</td>
+      <td>315</td>
+      <td>210</td>
+    </tr>
+    <tr>
+      <th>400</th>
+      <td>854</td>
+      <td>408</td>
+      <td>446</td>
+    </tr>
+    <tr>
+      <th>601</th>
+      <td>384</td>
+      <td>305</td>
+      <td>79</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>14000</th>
+      <td>935</td>
+      <td>610</td>
+      <td>325</td>
+    </tr>
+    <tr>
+      <th>14100</th>
+      <td>1008</td>
+      <td>296</td>
+      <td>712</td>
+    </tr>
+    <tr>
+      <th>14200</th>
+      <td>909</td>
+      <td>218</td>
+      <td>691</td>
+    </tr>
+    <tr>
+      <th>14300</th>
+      <td>772</td>
+      <td>385</td>
+      <td>387</td>
+    </tr>
+    <tr>
+      <th>14400</th>
+      <td>750</td>
+      <td>195</td>
+      <td>555</td>
+    </tr>
+  </tbody>
+</table>
+<p>172 rows × 3 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>At this point, data across census tracts is difficult to compare since the total households vary significantly. Therefore, we find the proportion of households with the property described by each variable.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[55]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">internet_proportions</span> <span class="o">=</span> <span class="n">df_internet</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Total&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">df_internet</span><span class="p">[</span><span class="s2">&quot;Total&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">internet_proportions</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[55]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>No Internet</th>
+      <th>Has Internet</th>
+    </tr>
+    <tr>
+      <th>Census Tract</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>100</th>
+      <td>0.145299</td>
+      <td>0.854701</td>
+    </tr>
+    <tr>
+      <th>200</th>
+      <td>0.394251</td>
+      <td>0.605749</td>
+    </tr>
+    <tr>
+      <th>300</th>
+      <td>0.600000</td>
+      <td>0.400000</td>
+    </tr>
+    <tr>
+      <th>400</th>
+      <td>0.477752</td>
+      <td>0.522248</td>
+    </tr>
+    <tr>
+      <th>601</th>
+      <td>0.794271</td>
+      <td>0.205729</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>14000</th>
+      <td>0.652406</td>
+      <td>0.347594</td>
+    </tr>
+    <tr>
+      <th>14100</th>
+      <td>0.293651</td>
+      <td>0.706349</td>
+    </tr>
+    <tr>
+      <th>14200</th>
+      <td>0.239824</td>
+      <td>0.760176</td>
+    </tr>
+    <tr>
+      <th>14300</th>
+      <td>0.498705</td>
+      <td>0.501295</td>
+    </tr>
+    <tr>
+      <th>14400</th>
+      <td>0.260000</td>
+      <td>0.740000</td>
+    </tr>
+  </tbody>
+</table>
+<p>172 rows × 2 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Publicly-Accessible-Internet">Publicly Accessible Internet<a class="anchor-link" href="#Publicly-Accessible-Internet">&#182;</a></h2><p>There are some locations throughout Orleans Parish that provide free access to internet for the public. It will be interesting to investigate the location of these relative to census tracts, especially those in which a small proportion of the population has access to the internet.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[56]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">free</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;./data/ComputerResources_data.csv&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Source:<br>
+City of New Orleans Open Data.<br>
+<a href="https://data.nola.gov/Health-Education-and-Social-Services/ComputerResources/vaaq-p3ar">https://data.nola.gov/Health-Education-and-Social-Services/ComputerResources/vaaq-p3ar</a>.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We would only like the locations that provide access to internet, so we filter out all the ones that do not. Additionally, we only are interested in the location of these public internet resources.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[57]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">free</span> <span class="o">=</span> <span class="n">free</span><span class="p">[</span><span class="n">free</span><span class="p">[</span><span class="s2">&quot;Internet&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Yes&quot;</span><span class="p">]</span>
+<span class="c1"># obtain the latitude and longitude using a regex</span>
+<span class="n">free</span> <span class="o">=</span> <span class="n">free</span><span class="p">[</span><span class="s2">&quot;the_geom&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(-\d</span><span class="si">{2}</span><span class="s2">\.\d+)\w\s(\d</span><span class="si">{2}</span><span class="s2">\.\d+)&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Above, we obtained the latitude and longitude by extracting groups from the point given by the "the_geom" column. We then create the final dataframe by changing the column datatypes to floats, reindexing, and setting the columns to be the appropriate name.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[58]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># create a mapping from the previous index to an index of 0...len(free)-1</span>
+<span class="n">index_map</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="p">:</span><span class="n">i</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">free</span><span class="o">.</span><span class="n">index</span><span class="p">),</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">free</span><span class="p">))))}</span>
+<span class="n">free</span> <span class="o">=</span> <span class="n">free</span><span class="o">.</span><span class="n">astype</span><span class="p">({</span><span class="mi">0</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">})</span>
+<span class="n">free</span> <span class="o">=</span> <span class="n">free</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="n">index_map</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="s2">&quot;latitude&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="s2">&quot;longitude&quot;</span><span class="p">})</span>
+<span class="n">free</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[58]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>latitude</th>
+      <th>longitude</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-90.101872</td>
+      <td>29.974913</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-90.013800</td>
+      <td>29.966384</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-90.013638</td>
+      <td>29.922730</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-90.101058</td>
+      <td>29.921354</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-90.107558</td>
+      <td>30.004961</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>-90.036747</td>
+      <td>29.963914</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>-89.972060</td>
+      <td>30.032259</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>-90.127869</td>
+      <td>29.948652</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>-90.110248</td>
+      <td>29.926647</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>-90.079215</td>
+      <td>29.966202</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>-90.061484</td>
+      <td>29.997529</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>-90.103598</td>
+      <td>29.948815</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>-89.970754</td>
+      <td>30.031888</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>-90.087156</td>
+      <td>29.918744</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>-90.086072</td>
+      <td>29.942697</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>-90.048205</td>
+      <td>29.953111</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>-90.075393</td>
+      <td>29.954512</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Race,-Income,-and-Education-Data">Race, Income, and Education Data<a class="anchor-link" href="#Race,-Income,-and-Education-Data">&#182;</a></h2>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>The goal for our project is to compare internet access in households to the racial makeup, income, and educational attainment by census tract. In order to do this, we load another data set sourced from NHGIS which contains information for the racial makeup of each census tract, the educational attainment for residents 25 years of age or older by census tract, and the median household income by census tract.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[59]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">rci</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;./data/race_education_income.csv&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;ISO-8859-1&quot;</span><span class="p">)</span>
+<span class="n">rci</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[59]:</div>
 
 
 
@@ -14753,286 +15353,356 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
       <th>COUSUBA</th>
       <th>PLACEA</th>
       <th>...</th>
-      <th>AIQBM004</th>
-      <th>AIQBM005</th>
-      <th>AIQBM006</th>
-      <th>AIQBM007</th>
-      <th>AIQBM008</th>
-      <th>AIQBM009</th>
-      <th>AIQBM010</th>
-      <th>AIQBM011</th>
-      <th>AIQBM012</th>
-      <th>AIQBM013</th>
+      <th>AH04E017</th>
+      <th>AH04E018</th>
+      <th>AH04E019</th>
+      <th>AH04E020</th>
+      <th>AH04E021</th>
+      <th>AH04E022</th>
+      <th>AH04E023</th>
+      <th>AH04E024</th>
+      <th>AH04E025</th>
+      <th>AH1PE001</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>28917</th>
-      <td>G2200710000100</td>
+      <th>0</th>
+      <td>G0100010020100</td>
       <td>2013-2017</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>Louisiana</td>
-      <td>22</td>
-      <td>Orleans Parish</td>
-      <td>71</td>
+      <td>Alabama</td>
+      <td>1</td>
+      <td>Autauga County</td>
+      <td>1</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>...</td>
-      <td>155</td>
-      <td>144</td>
-      <td>75</td>
-      <td>145</td>
-      <td>129</td>
-      <td>79</td>
-      <td>12</td>
-      <td>12</td>
+      <td>282</td>
+      <td>88</td>
       <td>34</td>
-      <td>87</td>
-    </tr>
-    <tr>
-      <th>28918</th>
-      <td>G2200710000200</td>
-      <td>2013-2017</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Louisiana</td>
-      <td>22</td>
-      <td>Orleans Parish</td>
-      <td>71</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>79</td>
-      <td>42</td>
-      <td>11</td>
-      <td>79</td>
-      <td>72</td>
-      <td>6</td>
-      <td>12</td>
-      <td>12</td>
+      <td>184</td>
+      <td>77</td>
+      <td>261</td>
+      <td>142</td>
       <td>45</td>
-      <td>47</td>
+      <td>28</td>
+      <td>67826.0</td>
     </tr>
     <tr>
-      <th>28919</th>
-      <td>G2200710000300</td>
+      <th>1</th>
+      <td>G0100010020200</td>
       <td>2013-2017</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>Louisiana</td>
-      <td>22</td>
-      <td>Orleans Parish</td>
-      <td>71</td>
+      <td>Alabama</td>
+      <td>1</td>
+      <td>Autauga County</td>
+      <td>1</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>...</td>
-      <td>56</td>
+      <td>495</td>
+      <td>90</td>
+      <td>91</td>
+      <td>182</td>
+      <td>106</td>
+      <td>166</td>
       <td>51</td>
-      <td>41</td>
-      <td>46</td>
-      <td>33</td>
-      <td>15</td>
-      <td>9</td>
-      <td>12</td>
-      <td>10</td>
-      <td>68</td>
+      <td>16</td>
+      <td>5</td>
+      <td>41287.0</td>
     </tr>
     <tr>
-      <th>28920</th>
-      <td>G2200710000400</td>
+      <th>2</th>
+      <td>G0100010020300</td>
       <td>2013-2017</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>Louisiana</td>
-      <td>22</td>
-      <td>Orleans Parish</td>
-      <td>71</td>
+      <td>Alabama</td>
+      <td>1</td>
+      <td>Autauga County</td>
+      <td>1</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>...</td>
-      <td>80</td>
-      <td>61</td>
-      <td>43</td>
-      <td>62</td>
-      <td>61</td>
-      <td>34</td>
-      <td>29</td>
-      <td>12</td>
+      <td>724</td>
+      <td>114</td>
+      <td>161</td>
+      <td>446</td>
+      <td>146</td>
+      <td>232</td>
+      <td>150</td>
+      <td>20</td>
+      <td>19</td>
+      <td>46806.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>G0100010020400</td>
+      <td>2013-2017</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>Alabama</td>
+      <td>1</td>
+      <td>Autauga County</td>
+      <td>1</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>...</td>
+      <td>873</td>
+      <td>208</td>
+      <td>249</td>
+      <td>291</td>
+      <td>250</td>
+      <td>540</td>
+      <td>156</td>
       <td>38</td>
-      <td>84</td>
+      <td>57</td>
+      <td>55895.0</td>
     </tr>
     <tr>
-      <th>28921</th>
-      <td>G2200710000601</td>
+      <th>4</th>
+      <td>G0100010020500</td>
       <td>2013-2017</td>
       <td>NaN</td>
       <td>NaN</td>
-      <td>Louisiana</td>
-      <td>22</td>
-      <td>Orleans Parish</td>
-      <td>71</td>
+      <td>Alabama</td>
+      <td>1</td>
+      <td>Autauga County</td>
+      <td>1</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>...</td>
-      <td>43</td>
-      <td>34</td>
-      <td>9</td>
-      <td>43</td>
-      <td>31</td>
-      <td>7</td>
-      <td>12</td>
-      <td>12</td>
-      <td>14</td>
-      <td>71</td>
+      <td>1331</td>
+      <td>264</td>
+      <td>439</td>
+      <td>1033</td>
+      <td>587</td>
+      <td>1446</td>
+      <td>1037</td>
+      <td>197</td>
+      <td>87</td>
+      <td>68143.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 73 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Source:<br>
+Steven Manson, Jonathan Schroeder, David Van Riper, Tracy Kugler, and Steven Ruggles.<br>
+IPUMS National Historical Geographic Information System: Version 16.0<br>
+2017 American Community Survey: 5-Year Data [2013-2017, Tracts &amp; Larger Areas]. Minneapolis, MN: IPUMS. 2021.<br>
+<a href="http://doi.org/10.18128/D050.V16.0">http://doi.org/10.18128/D050.V16.0</a></p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Again, this data set contains country-wide data, and we would like to restrict our consideration to Orleans Parish.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[60]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># filter out everywhere besides orleans parish</span>
+<span class="n">rci</span> <span class="o">=</span> <span class="n">rci</span><span class="p">[(</span><span class="n">rci</span><span class="p">[</span><span class="s2">&quot;STATE&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Louisiana&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">rci</span><span class="p">[</span><span class="s2">&quot;COUNTY&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Orleans Parish&quot;</span><span class="p">)]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Race-Dataset">Race Dataset<a class="anchor-link" href="#Race-Dataset">&#182;</a></h3><p>We would like to separate this large data set into three different data sets for race, income, and educational attainment. For the race data set, we select census tract and all the race information collected in the survey. Once again, the definition of the variables is located in the data folder on github, so we rename the columns to useful labels.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[61]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">race</span> <span class="o">=</span> <span class="n">rci</span><span class="p">[[</span><span class="s2">&quot;TRACTA&quot;</span><span class="p">,</span> <span class="s2">&quot;AHY2E001&quot;</span><span class="p">,</span> <span class="s2">&quot;AHY2E002&quot;</span><span class="p">,</span> <span class="s2">&quot;AHY2E003&quot;</span><span class="p">,</span> <span class="s2">&quot;AHY2E004&quot;</span><span class="p">,</span> <span class="s2">&quot;AHY2E005&quot;</span><span class="p">,</span> <span class="s2">&quot;AHY2E006&quot;</span><span class="p">,</span> <span class="s2">&quot;AHY2E007&quot;</span><span class="p">,</span> 
+            <span class="s2">&quot;AHY2E008&quot;</span><span class="p">]]</span>
+<span class="n">race</span> <span class="o">=</span> <span class="n">race</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;TRACTA&quot;</span><span class="p">:</span><span class="s2">&quot;Census Tract&quot;</span><span class="p">,</span> <span class="s2">&quot;AHY2E001&quot;</span><span class="p">:</span><span class="s2">&quot;Total&quot;</span><span class="p">,</span> <span class="s2">&quot;AHY2E002&quot;</span><span class="p">:</span><span class="s2">&quot;White&quot;</span><span class="p">,</span> <span class="s2">&quot;AHY2E003&quot;</span><span class="p">:</span><span class="s2">&quot;Black&quot;</span><span class="p">,</span> 
+                            <span class="s2">&quot;AHY2E004&quot;</span><span class="p">:</span><span class="s2">&quot;Native American&quot;</span><span class="p">,</span> <span class="s2">&quot;AHY2E005&quot;</span><span class="p">:</span><span class="s2">&quot;Asian&quot;</span><span class="p">,</span> <span class="s2">&quot;AHY2E006&quot;</span><span class="p">:</span><span class="s2">&quot;Pacific Islander&quot;</span><span class="p">,</span> 
+                            <span class="s2">&quot;AHY2E007&quot;</span><span class="p">:</span><span class="s2">&quot;Other&quot;</span><span class="p">,</span> <span class="s2">&quot;AHY2E008&quot;</span><span class="p">:</span><span class="s2">&quot;&gt;= 2 Races&quot;</span><span class="p">})</span>
+<span class="n">race</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;Census Tract&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">race</span> <span class="o">=</span> <span class="n">race</span><span class="p">[</span><span class="n">race</span><span class="p">[</span><span class="s2">&quot;Total&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>For the purposes of our study, it is more informatative to consider fewer variables, and therefore we will only consider the white population and the non-white population.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[62]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">race</span><span class="p">[</span><span class="s2">&quot;Non-White&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">race</span><span class="p">[[</span><span class="s2">&quot;Black&quot;</span><span class="p">,</span> <span class="s2">&quot;Native American&quot;</span><span class="p">,</span> <span class="s2">&quot;Asian&quot;</span><span class="p">,</span> <span class="s2">&quot;Pacific Islander&quot;</span><span class="p">,</span> <span class="s2">&quot;Other&quot;</span><span class="p">,</span> 
+                          <span class="s2">&quot;&gt;= 2 Races&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[63]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">race</span> <span class="o">=</span> <span class="n">race</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Black&quot;</span><span class="p">,</span> <span class="s2">&quot;Native American&quot;</span><span class="p">,</span> <span class="s2">&quot;Asian&quot;</span><span class="p">,</span> <span class="s2">&quot;Pacific Islander&quot;</span><span class="p">,</span> <span class="s2">&quot;Other&quot;</span><span class="p">,</span> <span class="s2">&quot;&gt;= 2 Races&quot;</span><span class="p">])</span>
+<span class="n">race</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[63]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Total</th>
+      <th>White</th>
+      <th>Non-White</th>
+    </tr>
+    <tr>
+      <th>Census Tract</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>100</th>
+      <td>2811</td>
+      <td>2574</td>
+      <td>237</td>
+    </tr>
+    <tr>
+      <th>200</th>
+      <td>1513</td>
+      <td>206</td>
+      <td>1307</td>
+    </tr>
+    <tr>
+      <th>300</th>
+      <td>1228</td>
+      <td>127</td>
+      <td>1101</td>
+    </tr>
+    <tr>
+      <th>400</th>
+      <td>2034</td>
+      <td>311</td>
+      <td>1723</td>
+    </tr>
+    <tr>
+      <th>601</th>
+      <td>1037</td>
+      <td>28</td>
+      <td>1009</td>
     </tr>
     <tr>
       <th>...</th>
       <td>...</td>
       <td>...</td>
       <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
     </tr>
     <tr>
-      <th>29089</th>
-      <td>G2200710014400</td>
-      <td>2013-2017</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Louisiana</td>
-      <td>22</td>
-      <td>Orleans Parish</td>
-      <td>71</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>74</td>
-      <td>61</td>
-      <td>25</td>
-      <td>74</td>
-      <td>59</td>
-      <td>12</td>
-      <td>12</td>
-      <td>12</td>
-      <td>30</td>
-      <td>68</td>
+      <th>14200</th>
+      <td>1718</td>
+      <td>1250</td>
+      <td>468</td>
     </tr>
     <tr>
-      <th>29090</th>
-      <td>G2200710014500</td>
-      <td>2013-2017</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Louisiana</td>
-      <td>22</td>
-      <td>Orleans Parish</td>
-      <td>71</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>12</td>
-      <td>12</td>
-      <td>12</td>
-      <td>12</td>
-      <td>12</td>
-      <td>12</td>
-      <td>12</td>
-      <td>12</td>
-      <td>12</td>
-      <td>12</td>
+      <th>14300</th>
+      <td>2192</td>
+      <td>307</td>
+      <td>1885</td>
     </tr>
     <tr>
-      <th>29091</th>
-      <td>G2200710980000</td>
-      <td>2013-2017</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Louisiana</td>
-      <td>22</td>
-      <td>Orleans Parish</td>
-      <td>71</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>12</td>
-      <td>12</td>
-      <td>12</td>
-      <td>12</td>
-      <td>12</td>
-      <td>12</td>
-      <td>12</td>
-      <td>12</td>
-      <td>12</td>
-      <td>12</td>
+      <th>14400</th>
+      <td>1619</td>
+      <td>1093</td>
+      <td>526</td>
     </tr>
     <tr>
-      <th>29092</th>
-      <td>G2200710980100</td>
-      <td>2013-2017</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Louisiana</td>
-      <td>22</td>
-      <td>Orleans Parish</td>
-      <td>71</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>12</td>
-      <td>12</td>
-      <td>12</td>
-      <td>12</td>
-      <td>12</td>
-      <td>12</td>
-      <td>12</td>
-      <td>12</td>
-      <td>12</td>
-      <td>12</td>
+      <th>14500</th>
+      <td>2102</td>
+      <td>390</td>
+      <td>1712</td>
     </tr>
     <tr>
-      <th>29093</th>
-      <td>G2200710990000</td>
-      <td>2013-2017</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Louisiana</td>
-      <td>22</td>
-      <td>Orleans Parish</td>
-      <td>71</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>...</td>
-      <td>12</td>
-      <td>12</td>
-      <td>12</td>
-      <td>12</td>
-      <td>12</td>
-      <td>12</td>
-      <td>12</td>
-      <td>12</td>
-      <td>12</td>
-      <td>12</td>
+      <th>980000</th>
+      <td>10</td>
+      <td>8</td>
+      <td>2</td>
     </tr>
   </tbody>
 </table>
-<p>177 rows × 84 columns</p>
+<p>174 rows × 3 columns</p>
 </div>
 </div>
 
@@ -15042,6 +15712,1051 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>It will be easier to compare observations if we obtain the proportion of each race by census tract which we do below.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[64]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">race_proportions</span> <span class="o">=</span> <span class="n">race</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Total&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">race</span><span class="p">[</span><span class="s2">&quot;Total&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">race_proportions</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[64]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>White</th>
+      <th>Non-White</th>
+    </tr>
+    <tr>
+      <th>Census Tract</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>100</th>
+      <td>0.915688</td>
+      <td>0.084312</td>
+    </tr>
+    <tr>
+      <th>200</th>
+      <td>0.136153</td>
+      <td>0.863847</td>
+    </tr>
+    <tr>
+      <th>300</th>
+      <td>0.103420</td>
+      <td>0.896580</td>
+    </tr>
+    <tr>
+      <th>400</th>
+      <td>0.152901</td>
+      <td>0.847099</td>
+    </tr>
+    <tr>
+      <th>601</th>
+      <td>0.027001</td>
+      <td>0.972999</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>14200</th>
+      <td>0.727590</td>
+      <td>0.272410</td>
+    </tr>
+    <tr>
+      <th>14300</th>
+      <td>0.140055</td>
+      <td>0.859945</td>
+    </tr>
+    <tr>
+      <th>14400</th>
+      <td>0.675108</td>
+      <td>0.324892</td>
+    </tr>
+    <tr>
+      <th>14500</th>
+      <td>0.185538</td>
+      <td>0.814462</td>
+    </tr>
+    <tr>
+      <th>980000</th>
+      <td>0.800000</td>
+      <td>0.200000</td>
+    </tr>
+  </tbody>
+</table>
+<p>174 rows × 2 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Education-Dataset">Education Dataset<a class="anchor-link" href="#Education-Dataset">&#182;</a></h3><p>Now, we create a new data frame containing all information regarding educational attainment by census tract.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[65]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">education</span> <span class="o">=</span> <span class="n">rci</span><span class="p">[[</span><span class="s2">&quot;TRACTA&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E001&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E002&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E003&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E004&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E005&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E006&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E007&quot;</span><span class="p">,</span>
+                 <span class="s2">&quot;AH04E008&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E009&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E010&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E011&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E012&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E013&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E014&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E015&quot;</span><span class="p">,</span>
+                 <span class="s2">&quot;AH04E016&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E017&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E018&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E019&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E020&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E021&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E022&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E023&quot;</span><span class="p">,</span>
+                 <span class="s2">&quot;AH04E024&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E025&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>The education data set contains a lot of information that is not particularly useful. For example, there are variables for completion of each grade up to $12^{\text{th}}$ which we group into no high school education. We group all information into 2 columns, the population who did not complete high school, and the population that did complete high school.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[66]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># group all variables corresponding to an incomplete high school education</span>
+<span class="n">education</span><span class="p">[</span><span class="s2">&quot;No High School&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">education</span><span class="p">[[</span><span class="s2">&quot;AH04E002&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E003&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E004&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E005&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E006&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E007&quot;</span><span class="p">,</span> 
+                                         <span class="s2">&quot;AH04E008&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E009&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E010&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E011&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E012&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E013&quot;</span><span class="p">,</span> 
+                                         <span class="s2">&quot;AH04E014&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E015&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E016&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># group all variables corresponding to a high school degree, GED, or above</span>
+<span class="n">education</span><span class="p">[</span><span class="s2">&quot;High School or Above&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">education</span><span class="p">[[</span><span class="s2">&quot;AH04E017&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E018&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E019&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E020&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E021&quot;</span><span class="p">,</span>
+                                              <span class="s2">&quot;AH04E022&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E023&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E024&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E025&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1"># drop all columns that we have grouped</span>
+<span class="n">education</span> <span class="o">=</span> <span class="n">education</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;AH04E002&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E003&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E004&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E005&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E006&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E007&quot;</span><span class="p">,</span> 
+                                    <span class="s2">&quot;AH04E008&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E009&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E010&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E011&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E012&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E013&quot;</span><span class="p">,</span> 
+                                    <span class="s2">&quot;AH04E014&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E015&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E016&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E017&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E018&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E019&quot;</span><span class="p">,</span> 
+                                    <span class="s2">&quot;AH04E020&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E021&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E022&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E023&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E024&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E025&quot;</span><span class="p">])</span>
+<span class="n">education</span> <span class="o">=</span> <span class="n">education</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;TRACTA&quot;</span><span class="p">:</span><span class="s2">&quot;Census Tract&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E001&quot;</span><span class="p">:</span><span class="s2">&quot;Total&quot;</span><span class="p">})</span>
+<span class="n">education</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;Census Tract&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Again, there are census tracts that do not contain any information, so we filter out any row with zero total people surveyed.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[67]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">education</span> <span class="o">=</span> <span class="n">education</span><span class="p">[</span><span class="n">education</span><span class="p">[</span><span class="s2">&quot;Total&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+<span class="n">education</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[67]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Total</th>
+      <th>No High School</th>
+      <th>High School or Above</th>
+    </tr>
+    <tr>
+      <th>Census Tract</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>100</th>
+      <td>2278</td>
+      <td>65</td>
+      <td>2213</td>
+    </tr>
+    <tr>
+      <th>200</th>
+      <td>1070</td>
+      <td>298</td>
+      <td>772</td>
+    </tr>
+    <tr>
+      <th>300</th>
+      <td>949</td>
+      <td>120</td>
+      <td>829</td>
+    </tr>
+    <tr>
+      <th>400</th>
+      <td>1424</td>
+      <td>280</td>
+      <td>1144</td>
+    </tr>
+    <tr>
+      <th>601</th>
+      <td>691</td>
+      <td>351</td>
+      <td>340</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>14200</th>
+      <td>1542</td>
+      <td>166</td>
+      <td>1376</td>
+    </tr>
+    <tr>
+      <th>14300</th>
+      <td>1138</td>
+      <td>374</td>
+      <td>764</td>
+    </tr>
+    <tr>
+      <th>14400</th>
+      <td>1356</td>
+      <td>134</td>
+      <td>1222</td>
+    </tr>
+    <tr>
+      <th>14500</th>
+      <td>1654</td>
+      <td>580</td>
+      <td>1074</td>
+    </tr>
+    <tr>
+      <th>980000</th>
+      <td>10</td>
+      <td>0</td>
+      <td>10</td>
+    </tr>
+  </tbody>
+</table>
+<p>174 rows × 3 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>In order to facilitate easier comparisons between census tracts, we obtain the proportions of each tract with no high school education and a high school education or more schooling.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[68]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">education_proportions</span> <span class="o">=</span> <span class="n">education</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Total&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">education</span><span class="p">[</span><span class="s2">&quot;Total&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">education_proportions</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[68]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>No High School</th>
+      <th>High School or Above</th>
+    </tr>
+    <tr>
+      <th>Census Tract</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>100</th>
+      <td>0.028534</td>
+      <td>0.971466</td>
+    </tr>
+    <tr>
+      <th>200</th>
+      <td>0.278505</td>
+      <td>0.721495</td>
+    </tr>
+    <tr>
+      <th>300</th>
+      <td>0.126449</td>
+      <td>0.873551</td>
+    </tr>
+    <tr>
+      <th>400</th>
+      <td>0.196629</td>
+      <td>0.803371</td>
+    </tr>
+    <tr>
+      <th>601</th>
+      <td>0.507959</td>
+      <td>0.492041</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>14200</th>
+      <td>0.107652</td>
+      <td>0.892348</td>
+    </tr>
+    <tr>
+      <th>14300</th>
+      <td>0.328647</td>
+      <td>0.671353</td>
+    </tr>
+    <tr>
+      <th>14400</th>
+      <td>0.098820</td>
+      <td>0.901180</td>
+    </tr>
+    <tr>
+      <th>14500</th>
+      <td>0.350665</td>
+      <td>0.649335</td>
+    </tr>
+    <tr>
+      <th>980000</th>
+      <td>0.000000</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>174 rows × 2 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Income-Dataset">Income Dataset<a class="anchor-link" href="#Income-Dataset">&#182;</a></h3><p>The income dataset contains very little information, it simply contains the the census tract number and the median household income for that census tract. The only cleaning we must perform on this dataframe is the removal of census tracts with no income information.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[69]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">income</span> <span class="o">=</span> <span class="n">rci</span><span class="p">[[</span><span class="s2">&quot;TRACTA&quot;</span><span class="p">,</span><span class="s2">&quot;AH1PE001&quot;</span><span class="p">]]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[70]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">income</span> <span class="o">=</span> <span class="n">income</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+<span class="n">income</span> <span class="o">=</span> <span class="n">income</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;TRACTA&quot;</span><span class="p">:</span><span class="s2">&quot;Census Tract&quot;</span><span class="p">,</span><span class="s2">&quot;AH1PE001&quot;</span><span class="p">:</span><span class="s2">&quot;Median Household Income&quot;</span><span class="p">})</span>
+<span class="n">income</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;Census Tract&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">income</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[70]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Median Household Income</th>
+    </tr>
+    <tr>
+      <th>Census Tract</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>100</th>
+      <td>70292.0</td>
+    </tr>
+    <tr>
+      <th>200</th>
+      <td>32467.0</td>
+    </tr>
+    <tr>
+      <th>300</th>
+      <td>26116.0</td>
+    </tr>
+    <tr>
+      <th>400</th>
+      <td>25565.0</td>
+    </tr>
+    <tr>
+      <th>601</th>
+      <td>13145.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>14000</th>
+      <td>11307.0</td>
+    </tr>
+    <tr>
+      <th>14100</th>
+      <td>19608.0</td>
+    </tr>
+    <tr>
+      <th>14200</th>
+      <td>51510.0</td>
+    </tr>
+    <tr>
+      <th>14300</th>
+      <td>11783.0</td>
+    </tr>
+    <tr>
+      <th>14400</th>
+      <td>51500.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>171 rows × 1 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Exploratory-Analysis-and-Data-Visualization">Exploratory Analysis and Data Visualization<a class="anchor-link" href="#Exploratory-Analysis-and-Data-Visualization">&#182;</a></h2>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>An initial plot that is interesting to consider is the distribution of internet access by census tract. This will give an idea of how evenly distributed internet is across geographic regions of Orleans Parish.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[71]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">internet_proportions</span><span class="p">[</span><span class="s2">&quot;Has Internet&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Proportion of Households with Internet Access&quot;</span><span class="p">)</span>
+<span class="c1"># xticks are not necessary since there is only one distribution</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[72]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">internet_proportions</span><span class="p">[</span><span class="s2">&quot;Has Internet&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[72]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>count    172.000000
+mean       0.686202
+std        0.187571
+min        0.084507
+25%        0.556418
+50%        0.703812
+75%        0.846738
+max        1.000000
+Name: Has Internet, dtype: float64</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>The resulting distribution is skewed left meaning that there are many census tracts with a high proportion of households with internet access, and a few census tracts with a low proportion of households with internet access. These census tracts with a low proportion of households with internet access will be of great interest since these are the areas that clearly require improved infrastructure or other support.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Another important step in our analysis is to understand the correlations between all of the variables in consideration. To do so, we will merge all data sets and consider the variables for which we believe there might be a strong correlation.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[73]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># inner merge is necessary because there are not observations for the same tracts in each data frame</span>
+<span class="n">temp</span> <span class="o">=</span> <span class="n">internet_proportions</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">race_proportions</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;Census Tract&quot;</span><span class="p">)</span>
+<span class="n">temp</span> <span class="o">=</span> <span class="n">temp</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">education_proportions</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;Census Tract&quot;</span><span class="p">)</span>
+<span class="n">df_all</span> <span class="o">=</span> <span class="n">temp</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">income</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;inner&quot;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s2">&quot;Census Tract&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We can consider summarize most of the data simply considering the proportion of each tract with no computer and no internet, the proportion of the tract population that is white, the proportion with no high school education, and the median household income in each tract. Considering these variables also allows us to understand the correlations between other variables such as the proportion that does have a computer or internet, the proportion that is non-white, and the proportion with at least a high school diploma because these are all complements of the variables under explicit investigation.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[74]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_all</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[74]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>No Internet</th>
+      <th>Has Internet</th>
+      <th>White</th>
+      <th>Non-White</th>
+      <th>No High School</th>
+      <th>High School or Above</th>
+      <th>Median Household Income</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>No Internet</th>
+      <td>1.000000</td>
+      <td>-1.000000</td>
+      <td>-0.761323</td>
+      <td>0.761323</td>
+      <td>0.857278</td>
+      <td>-0.857278</td>
+      <td>-0.792468</td>
+    </tr>
+    <tr>
+      <th>Has Internet</th>
+      <td>-1.000000</td>
+      <td>1.000000</td>
+      <td>0.761323</td>
+      <td>-0.761323</td>
+      <td>-0.857278</td>
+      <td>0.857278</td>
+      <td>0.792468</td>
+    </tr>
+    <tr>
+      <th>White</th>
+      <td>-0.761323</td>
+      <td>0.761323</td>
+      <td>1.000000</td>
+      <td>-1.000000</td>
+      <td>-0.679351</td>
+      <td>0.679351</td>
+      <td>0.732181</td>
+    </tr>
+    <tr>
+      <th>Non-White</th>
+      <td>0.761323</td>
+      <td>-0.761323</td>
+      <td>-1.000000</td>
+      <td>1.000000</td>
+      <td>0.679351</td>
+      <td>-0.679351</td>
+      <td>-0.732181</td>
+    </tr>
+    <tr>
+      <th>No High School</th>
+      <td>0.857278</td>
+      <td>-0.857278</td>
+      <td>-0.679351</td>
+      <td>0.679351</td>
+      <td>1.000000</td>
+      <td>-1.000000</td>
+      <td>-0.664614</td>
+    </tr>
+    <tr>
+      <th>High School or Above</th>
+      <td>-0.857278</td>
+      <td>0.857278</td>
+      <td>0.679351</td>
+      <td>-0.679351</td>
+      <td>-1.000000</td>
+      <td>1.000000</td>
+      <td>0.664614</td>
+    </tr>
+    <tr>
+      <th>Median Household Income</th>
+      <td>-0.792468</td>
+      <td>0.792468</td>
+      <td>0.732181</td>
+      <td>-0.732181</td>
+      <td>-0.664614</td>
+      <td>0.664614</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Besides the obvious correlations such as the correlation between having a computer and having internet, this table contains a lot of very valuable information to our investigation. This correlation table indicates strong correlation between the proportion of a census tract with no internet and</p>
+<ul>
+<li>the proportion of the tract that is non-white ($r \approx 0.761$)</li>
+<li>the proportion of the tract that has no high school edution ($r \approx 0.857$)</li>
+<li>the median household income ($r \approx -0.792$)</li>
+</ul>
+<p>It will be useful to visualize some of these relationships on a scatter plot:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[75]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df_all</span><span class="p">[</span><span class="s2">&quot;No High School&quot;</span><span class="p">],</span> <span class="n">df_all</span><span class="p">[</span><span class="s2">&quot;No Internet&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Proportion of Census Tract without a High School Degree&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Proportion of Census Tract with No Internet Access&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[76]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df_all</span><span class="p">[</span><span class="s2">&quot;Non-White&quot;</span><span class="p">],</span> <span class="n">df_all</span><span class="p">[</span><span class="s2">&quot;No Internet&quot;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Proportion of Census Tract that is Non-White&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Proportion of Census Tract with No Internet Access&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>In these plots, each point represents a census tract in Orleans Parish where the y-value is the proportion of the census tract with no internet access. The x-value in the first plot is the proportion of the census tract with no high school degree, and in the second plot the x-value is the proportion of the census tract that is non-white. Both plots allow us to visualize the strong correlations summarized by the correlation matrix.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Now, we want to consider the distribution of publicly accessible internet. To do so, we calculate the distance matrix for all points in this graph, and plot the distances on a heat map.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[77]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">distances</span> <span class="o">=</span> <span class="n">pairwise_distances</span><span class="p">(</span><span class="n">free</span><span class="p">,</span> <span class="n">metric</span><span class="o">=</span><span class="s2">&quot;euclidean&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[78]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">distances</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;YlOrRd&quot;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s2">&quot;lower&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+<span class="c1"># ticks are not necessary</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>In this heat map, each square represents a comparison of one location with publicly accessible internet to another, and the darker the color, the more distant the locations are. Based on this plot, it seems like there are two locations with free internet access far from most others, and the rest of the free internet locations are relatively close to each other.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Future-Directions">Future Directions<a class="anchor-link" href="#Future-Directions">&#182;</a></h2>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>For the next part of our project, we plan to test how statistically significant the correlations between internet access and race/education level/income are. We would also like to create a geographic map indicating the proportion of each census tract with access to internet and overlay this data with the locations of publicly accessible internet. If possible, we would like to calculate the distance from each census tract (more specifically, the center of the tract) to its closest publicly accessible internet location. This would allow us to test for correlation between that distance and the proportion of the tract that has access to internet which would inform us as to whether these locations are distributed appropriately.</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
