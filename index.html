@@ -13972,7 +13972,7 @@ a.anchor-link {
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Jacob Masur and Daniel Cohen</p>
-<h1 id="Internet-Access-in-Orleans-Parish">Internet Access in Orleans Parish<a class="anchor-link" href="#Internet-Access-in-Orleans-Parish">&#182;</a></h1><h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h2><p>This webpage (<a href="https://jnmasur.github.io/index.html">https://jnmasur.github.io/index.html</a>) was created by Jacob Masur and Daniel Cohen to investigate the distribution of internet access in Orleans Parish across geographic regions. This is extremely important to consider in our modern computer-based society in which increasingly many common resources and tasks are placed online. This is especially relevant in the time of a global pandemic where, in the name of safety, many workplaces and schools have converted to strictly virtual environments. In addition, many vital resources are now most easily accessed through the internet such as <a href="https://www.fema.gov/disaster/hurricane-ida">FEMA assistance for Hurricane Ida</a>.</p>
+<h1 id="Internet-Access-in-Orleans-Parish">Internet Access in Orleans Parish<a class="anchor-link" href="#Internet-Access-in-Orleans-Parish">&#182;</a></h1><h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h2><p>This webpage (<a href="https://jnmasur.github.io/index.html">https://jnmasur.github.io/index.html</a>) was created by Jacob Masur and Daniel Cohen to investigate the distribution of internet access in Orleans Parish across geographic regions. This is an extremely important topic to consider in our modern computer-based society in which increasingly many common resources and tasks are placed online. This is especially relevant in the time of a global pandemic where, in the name of safety, many workplaces and schools have converted to strictly virtual environments. In addition, many vital resources are now most easily accessed through the internet such as <a href="https://www.fema.gov/disaster/hurricane-ida">FEMA assistance for Hurricane Ida</a>.</p>
 <p>Increased virtualization can be beneficial as it provides safer and more convenient access to necessary resources, but access to internet requires owning some device that can connect to the internet and payment for an internet service plan. The cost of paying for internet access can be extremely burdensome for families whose children must complete many homework assignments and even full school days strictly online. This poses a massive risk of strengthening the <a href="https://www.worldvision.ca/stories/child-sponsorship/what-is-the-cycle-of-poverty">cycle of poverty</a> where children born in poor families lacking internet access <a href="https://www.pewtrusts.org/en/trust/archive/summer-2019/americas-digital-divide">struggle more than other students in school</a> due to lack of internet access and then <a href="https://www.bls.gov/emp/chart-unemployment-earnings-education.htm">struggle to make sufficient money later in life</a> to pay for internet access for their children. In addition, this could increase the extremely harmful effects of <a href="https://www.vox.com/2020/6/17/21284527/systemic-racism-black-americans-9-charts-explained">systemic racism</a> which has already placed black Americans and other minorities at an extreme disadvantage financially and in other ways.</p>
 <p>Given the clear issues caused by lack of internet access, in our project, our primary goal is to answer the questions:</p>
 <ol>
@@ -13991,7 +13991,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Installs-and-Imports">Installs and Imports<a class="anchor-link" href="#Installs-and-Imports">&#182;</a></h3><p>Here we simply install and import the necessary libraries and functions that we will use for our investigation.</p>
+<h3 id="Installs-and-Imports">Installs and Imports<a class="anchor-link" href="#Installs-and-Imports">&#182;</a></h3><p>Here we provide the commands for installing the necessary packages, and we import the libraries and functions we will use.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -14018,7 +14018,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[200]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># useful libraries</span>
@@ -14043,7 +14043,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Data-Overview">Data Overview<a class="anchor-link" href="#Data-Overview">&#182;</a></h2><p>For our investigation, we will be using seven distinct data sets. The first one contains census tract level information reagrding the type and precense of internet and computers by household for census tracts across the entire country and is provided by <a href="https://www.nhgis.org/">NHGIS</a>. We also obtained 3 other data sets from NHGIS, one providing the racial makeup by census tract, one detailing educational attainment for people 25 years of age or older by census tract, and one containing the median household income also by census tract. The final data set sourced via NHGIS is the data set that provides the population of each census tract. All aforementioned data is the result of the <a href="https://www.census.gov/data/developers/data-sets/acs-5year.html">American Community Survey</a> which is conducted by the Census Bureau and is therefore a trustworthy source. All datasets sourced from NHGIS contain country-wide data, and most contain many variables that are irrelevant to our discussion, so cleaning these sets is essential. The sixth data set contains geographic information for locations with free publicly accessible internet in Orleans Parish. This data comes from the <a href="https://data.nola.gov/">official New Orleans Database</a> which is also a very trustworthy source. The final data set is directly sourced from the <a href="https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html">US Census Bureau</a> and contains shape files for Louisiana census tracts necessary for performing geographic plotting. All data sets come from official government sources, so we believe that this data is accurate and will provide a good representation of internet access by race, income, and educational attainment.</p>
+<h2 id="Data-Overview">Data Overview<a class="anchor-link" href="#Data-Overview">&#182;</a></h2><p>For our investigation, we will be using seven distinct data sets. The first one contains census tract level information reagrding the type and precense of internet and computers by household for census tracts across the entire country and is provided by <a href="https://www.nhgis.org/">NHGIS</a>. We also obtained 4 other data sets from NHGIS, one providing the racial makeup by census tract, one detailing educational attainment for people 25 years of age or older by census tract, and one containing the median household income also by census tract. The final data set sourced via NHGIS is the data set that provides the population of each census tract. All aforementioned data is the result of the <a href="https://www.census.gov/data/developers/data-sets/acs-5year.html">American Community Survey</a> which is conducted by the Census Bureau and is therefore a trustworthy source. All datasets sourced from NHGIS contain country-wide data, and most contain many variables that are irrelevant to our discussion, so cleaning these sets is essential. The sixth data set contains geographic information for locations with free publicly accessible internet in Orleans Parish. This data comes from the <a href="https://data.nola.gov/">official New Orleans Database</a> which is also a very trustworthy source. The final data set is directly sourced from the <a href="https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html">US Census Bureau</a> and contains shape files for Louisiana census tracts necessary for performing geographic plotting. All data sets come from official government sources, so we believe that this data is accurate and will provide a good representation of internet access by race, income, and educational attainment.</p>
 
 </div>
 </div>
@@ -14055,7 +14055,7 @@ a.anchor-link {
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[94]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># load the internet access data set</span>
@@ -14076,7 +14076,7 @@ a.anchor-link {
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[94]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
 
 
 
@@ -14279,7 +14279,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[95]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">internet</span> <span class="o">=</span> <span class="n">internet</span><span class="p">[(</span><span class="n">internet</span><span class="p">[</span><span class="s2">&quot;STATE&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Louisiana&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">internet</span><span class="p">[</span><span class="s2">&quot;COUNTY&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Orleans Parish&quot;</span><span class="p">)]</span>
@@ -14299,7 +14299,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[95]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
 
 
 
@@ -14487,7 +14487,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[96]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_internet</span> <span class="o">=</span> <span class="n">internet</span><span class="p">[[</span><span class="s2">&quot;TRACTA&quot;</span><span class="p">,</span> <span class="s2">&quot;AIQAE001&quot;</span><span class="p">,</span> <span class="s2">&quot;AIQBE013&quot;</span><span class="p">]]</span>
@@ -14507,7 +14507,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[97]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_internet</span> <span class="o">=</span> <span class="n">df_internet</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;TRACTA&quot;</span><span class="p">:</span> <span class="s2">&quot;Census Tract&quot;</span><span class="p">,</span> <span class="s2">&quot;AIQAE001&quot;</span><span class="p">:</span><span class="s2">&quot;Total&quot;</span><span class="p">,</span> <span class="s2">&quot;AIQBE013&quot;</span><span class="p">:</span><span class="s2">&quot;No Internet&quot;</span><span class="p">})</span>
@@ -14527,7 +14527,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[98]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_internet</span><span class="p">[</span><span class="s2">&quot;Has Internet&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_internet</span><span class="p">[</span><span class="s2">&quot;Total&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df_internet</span><span class="p">[</span><span class="s2">&quot;No Internet&quot;</span><span class="p">]</span>
@@ -14547,7 +14547,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[99]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_internet</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;Census Tract&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -14567,7 +14567,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[100]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_internet</span> <span class="o">=</span> <span class="n">df_internet</span><span class="p">[</span><span class="n">df_internet</span><span class="p">[</span><span class="s2">&quot;Total&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
@@ -14581,7 +14581,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[101]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_internet</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -14600,7 +14600,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[101]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
 
 
 
@@ -14685,7 +14685,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[102]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">internet_proportions</span> <span class="o">=</span> <span class="n">df_internet</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Total&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">df_internet</span><span class="p">[</span><span class="s2">&quot;Total&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -14705,7 +14705,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[102]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
 
 
 
@@ -14783,7 +14783,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[103]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">free</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;./data/ComputerResources_data.csv&quot;</span><span class="p">)</span>
@@ -14797,7 +14797,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[104]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">free</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -14816,7 +14816,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[104]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
 
 
 
@@ -15012,7 +15012,7 @@ City of New Orleans Open Data.<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[105]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">free</span> <span class="o">=</span> <span class="n">free</span><span class="p">[</span><span class="n">free</span><span class="p">[</span><span class="s2">&quot;Internet&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Yes&quot;</span><span class="p">]</span>
@@ -15028,7 +15028,7 @@ City of New Orleans Open Data.<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[106]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">free</span><span class="p">[</span><span class="s2">&quot;lon&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">temp</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
@@ -15043,7 +15043,7 @@ City of New Orleans Open Data.<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[107]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">free</span> <span class="o">=</span> <span class="n">free</span><span class="p">[[</span><span class="s2">&quot;lon&quot;</span><span class="p">,</span> <span class="s2">&quot;lat&quot;</span><span class="p">]]</span>
@@ -15057,7 +15057,7 @@ City of New Orleans Open Data.<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[108]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">free</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -15076,7 +15076,7 @@ City of New Orleans Open Data.<br>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[108]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[17]:</div>
 
 
 
@@ -15149,7 +15149,7 @@ City of New Orleans Open Data.<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[109]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">geo_free</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">free</span><span class="p">)</span>
@@ -15163,7 +15163,7 @@ City of New Orleans Open Data.<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[110]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># create a geometry column containing Point objects which will allow for plotting</span>
@@ -15185,7 +15185,7 @@ City of New Orleans Open Data.<br>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[110]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
 
 
 
@@ -15269,7 +15269,7 @@ City of New Orleans Open Data.<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[111]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">rci</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;./data/race_education_income.csv&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;ISO-8859-1&quot;</span><span class="p">)</span>
@@ -15289,7 +15289,7 @@ City of New Orleans Open Data.<br>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[111]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
 
 
 
@@ -15487,7 +15487,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[112]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># filter out everywhere besides orleans parish</span>
@@ -15508,7 +15508,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[113]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">race</span> <span class="o">=</span> <span class="n">rci</span><span class="p">[[</span><span class="s2">&quot;TRACTA&quot;</span><span class="p">,</span> <span class="s2">&quot;AHY2E001&quot;</span><span class="p">,</span> <span class="s2">&quot;AHY2E002&quot;</span><span class="p">,</span> <span class="s2">&quot;AHY2E003&quot;</span><span class="p">,</span> <span class="s2">&quot;AHY2E004&quot;</span><span class="p">,</span> <span class="s2">&quot;AHY2E005&quot;</span><span class="p">,</span> <span class="s2">&quot;AHY2E006&quot;</span><span class="p">,</span> <span class="s2">&quot;AHY2E007&quot;</span><span class="p">,</span> 
@@ -15534,7 +15534,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[114]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">race</span><span class="p">[</span><span class="s2">&quot;Non-White&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">race</span><span class="p">[[</span><span class="s2">&quot;Black&quot;</span><span class="p">,</span> <span class="s2">&quot;Native American&quot;</span><span class="p">,</span> <span class="s2">&quot;Asian&quot;</span><span class="p">,</span> <span class="s2">&quot;Pacific Islander&quot;</span><span class="p">,</span> <span class="s2">&quot;Other&quot;</span><span class="p">,</span> 
@@ -15549,7 +15549,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[115]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">race</span> <span class="o">=</span> <span class="n">race</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Black&quot;</span><span class="p">,</span> <span class="s2">&quot;Native American&quot;</span><span class="p">,</span> <span class="s2">&quot;Asian&quot;</span><span class="p">,</span> <span class="s2">&quot;Pacific Islander&quot;</span><span class="p">,</span> <span class="s2">&quot;Other&quot;</span><span class="p">,</span> <span class="s2">&quot;&gt;= 2 Races&quot;</span><span class="p">])</span>
@@ -15569,7 +15569,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[115]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
 
 
 
@@ -15654,7 +15654,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[116]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">race_proportions</span> <span class="o">=</span> <span class="n">race</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Total&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">race</span><span class="p">[</span><span class="s2">&quot;Total&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -15674,7 +15674,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[116]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
 
 
 
@@ -15752,7 +15752,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[117]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">education</span> <span class="o">=</span> <span class="n">rci</span><span class="p">[[</span><span class="s2">&quot;TRACTA&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E001&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E002&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E003&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E004&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E005&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E006&quot;</span><span class="p">,</span> <span class="s2">&quot;AH04E007&quot;</span><span class="p">,</span>
@@ -15775,7 +15775,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[118]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># group all variables corresponding to an incomplete high school education</span>
@@ -15808,7 +15808,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[119]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">education</span> <span class="o">=</span> <span class="n">education</span><span class="p">[</span><span class="n">education</span><span class="p">[</span><span class="s2">&quot;Total&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
@@ -15828,7 +15828,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[119]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[28]:</div>
 
 
 
@@ -15913,7 +15913,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[120]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">education_proportions</span> <span class="o">=</span> <span class="n">education</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Total&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="n">education</span><span class="p">[</span><span class="s2">&quot;Total&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -15933,7 +15933,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[120]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[29]:</div>
 
 
 
@@ -16011,7 +16011,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[121]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">income</span> <span class="o">=</span> <span class="n">rci</span><span class="p">[[</span><span class="s2">&quot;TRACTA&quot;</span><span class="p">,</span><span class="s2">&quot;AH1PE001&quot;</span><span class="p">]]</span>
@@ -16025,7 +16025,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[122]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">income</span> <span class="o">=</span> <span class="n">income</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
@@ -16047,7 +16047,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[122]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[31]:</div>
 
 
 
@@ -16118,7 +16118,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[123]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pop</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;./data/population.csv&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;ISO-8859-1&quot;</span><span class="p">)</span>
@@ -16129,10 +16129,20 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 </div>
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Source:<br>
+Steven Manson, Jonathan Schroeder, David Van Riper, Tracy Kugler, and Steven Ruggles.<br>
+IPUMS National Historical Geographic Information System: Version 16.0<br>
+2017 American Community Survey: 5-Year Data [2013-2017, Tracts &amp; Larger Areas]. Minneapolis, MN: IPUMS. 2021.<br>
+<a href="http://doi.org/10.18128/D050.V16.0">http://doi.org/10.18128/D050.V16.0</a></p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[124]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[33]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pop</span> <span class="o">=</span> <span class="n">pop</span><span class="p">[(</span><span class="n">pop</span><span class="p">[</span><span class="s2">&quot;STATE&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Louisiana&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">pop</span><span class="p">[</span><span class="s2">&quot;COUNTY&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Orleans Parish&quot;</span><span class="p">)]</span>
@@ -16146,10 +16156,11 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[125]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[34]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pop</span> <span class="o">=</span> <span class="n">pop</span><span class="p">[[</span><span class="s2">&quot;TRACTA&quot;</span><span class="p">,</span> <span class="s2">&quot;AHY1E001&quot;</span><span class="p">,</span> <span class="s2">&quot;GISJOIN&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;AHY1E001&quot;</span><span class="p">:</span><span class="s2">&quot;Population&quot;</span><span class="p">,</span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># take the tract population, and GISJOIN columns and set tract as index</span>
+<span class="n">pop</span> <span class="o">=</span> <span class="n">pop</span><span class="p">[[</span><span class="s2">&quot;TRACTA&quot;</span><span class="p">,</span> <span class="s2">&quot;AHY1E001&quot;</span><span class="p">,</span> <span class="s2">&quot;GISJOIN&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;AHY1E001&quot;</span><span class="p">:</span><span class="s2">&quot;Population&quot;</span><span class="p">,</span> 
                                                              <span class="s2">&quot;TRACTA&quot;</span><span class="p">:</span><span class="s2">&quot;Tract&quot;</span><span class="p">})</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;Tract&quot;</span><span class="p">)</span>
 </pre></div>
 
@@ -16161,7 +16172,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[126]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[35]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pop</span> <span class="o">=</span> <span class="n">pop</span><span class="p">[</span><span class="n">pop</span><span class="p">[</span><span class="s2">&quot;Population&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
@@ -16181,7 +16192,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[126]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[35]:</div>
 
 
 
@@ -16259,10 +16270,10 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[131]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[37]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tracts</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;./data/tl_2017_22_tract/tl_2017_22_tract.shp&quot;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tracts</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;./data/geo_tracts/tl_2017_22_tract.shp&quot;</span><span class="p">)</span>
 <span class="n">tracts</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
@@ -16279,7 +16290,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[131]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[37]:</div>
 
 
 
@@ -16409,10 +16420,19 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Source:<br>
+US Census Bureau, Geography Division.<br>
+TIGER/Line &reg; Shape Files.<br>
+<a href="https://www.census.gov/cgi-bin/geo/shapefiles/index.php">https://www.census.gov/cgi-bin/geo/shapefiles/index.php</a></p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[132]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># get census tracts for orleans parish</span>
@@ -16433,7 +16453,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[133]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[39]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">optracts</span><span class="p">[</span><span class="s2">&quot;standard_tract&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">optracts</span><span class="p">[</span><span class="s2">&quot;GEOID&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
@@ -16453,7 +16473,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[148]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[40]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">internet_pop</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;No Internet&quot;</span><span class="p">:</span> <span class="n">internet_proportions</span><span class="p">[</span><span class="s2">&quot;No Internet&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">pop</span><span class="p">[</span><span class="s2">&quot;Population&quot;</span><span class="p">]})</span>
@@ -16468,7 +16488,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[150]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[41]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">internet_pop</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -16487,7 +16507,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[150]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[41]:</div>
 
 
 
@@ -16554,7 +16574,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[153]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[42]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">geo_internet</span> <span class="o">=</span> <span class="n">optracts</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">internet_pop</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="s2">&quot;standard_tract&quot;</span><span class="p">,</span> <span class="n">right_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -16568,7 +16588,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[154]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[43]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">geo_internet</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -16587,7 +16607,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[154]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[43]:</div>
 
 
 
@@ -16743,7 +16763,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[51]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[44]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">boxplot</span><span class="p">(</span><span class="n">internet_proportions</span><span class="p">[</span><span class="s2">&quot;Has Internet&quot;</span><span class="p">])</span>
@@ -16786,7 +16806,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[52]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[45]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">internet_proportions</span><span class="p">[</span><span class="s2">&quot;Has Internet&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
@@ -16805,7 +16825,7 @@ IPUMS National Historical Geographic Information System: Version 16.0<br>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[52]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[45]:</div>
 
 
 
@@ -16832,6 +16852,50 @@ Name: Has Internet, dtype: float64</pre>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>The resulting distribution is skewed left meaning that there are many census tracts with a high proportion of households with internet access, and a few census tracts with a low proportion of households with internet access. These census tracts with a low proportion of households with internet access will be of great interest since these are the areas that clearly require improved infrastructure or other support. However, we can see that overall access to internet is distributed relatively well since the distribution is not extremely skewed (the mean and the median are close in value).</p>
+<p>We would also like to determine the expected proportion of the total population with acccess to internet, to do so, we sum the households with internet in each tract and divide by the total number of households surveyed accross all tracts.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[46]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_internet</span><span class="p">[</span><span class="s2">&quot;Has Internet&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="n">df_internet</span><span class="p">[</span><span class="s2">&quot;Total&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[46]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>0.7074469802124019</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><a href="https://www.statista.com/statistics/189349/us-households-home-internet-connection-subscription/">Statistica.com</a> reports that 83.8% of US Households had access to internet in 2017 (the time our data was collected), indicating that Orleans Parish is behind the rest of the country in terms of internet access within people's homes.</p>
 
 </div>
 </div>
@@ -16843,7 +16907,7 @@ Name: Has Internet, dtype: float64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[252]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[47]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">distances</span> <span class="o">=</span> <span class="n">pairwise_distances</span><span class="p">(</span><span class="n">free</span><span class="p">[[</span><span class="s2">&quot;lon&quot;</span><span class="p">,</span> <span class="s2">&quot;lat&quot;</span><span class="p">]],</span> <span class="n">metric</span><span class="o">=</span><span class="s2">&quot;euclidean&quot;</span><span class="p">)</span>
@@ -16857,7 +16921,7 @@ Name: Has Internet, dtype: float64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[253]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[48]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">distances</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;YlOrRd&quot;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s2">&quot;lower&quot;</span><span class="p">)</span>
@@ -16913,7 +16977,7 @@ Name: Has Internet, dtype: float64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[53]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[49]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># inner merge is necessary because there are not observations for the same tracts in each data frame</span>
@@ -16936,7 +17000,7 @@ Name: Has Internet, dtype: float64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[54]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[50]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_all</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
@@ -16955,7 +17019,7 @@ Name: Has Internet, dtype: float64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[54]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[50]:</div>
 
 
 
@@ -17084,7 +17148,7 @@ Name: Has Internet, dtype: float64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[249]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[51]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">linregress</span><span class="p">(</span><span class="n">df_all</span><span class="p">[</span><span class="s2">&quot;No High School&quot;</span><span class="p">],</span> <span class="n">df_all</span><span class="p">[</span><span class="s2">&quot;No Internet&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">pvalue</span>
@@ -17103,7 +17167,7 @@ Name: Has Internet, dtype: float64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[249]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[51]:</div>
 
 
 
@@ -17121,7 +17185,7 @@ Name: Has Internet, dtype: float64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[250]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[52]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">linregress</span><span class="p">(</span><span class="n">df_all</span><span class="p">[</span><span class="s2">&quot;Non-White&quot;</span><span class="p">],</span> <span class="n">df_all</span><span class="p">[</span><span class="s2">&quot;No Internet&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">pvalue</span>
@@ -17140,7 +17204,7 @@ Name: Has Internet, dtype: float64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[250]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[52]:</div>
 
 
 
@@ -17158,7 +17222,7 @@ Name: Has Internet, dtype: float64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[251]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[53]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">linregress</span><span class="p">(</span><span class="n">df_all</span><span class="p">[</span><span class="s2">&quot;Median Household Income&quot;</span><span class="p">],</span> <span class="n">df_all</span><span class="p">[</span><span class="s2">&quot;No Internet&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">pvalue</span>
@@ -17177,7 +17241,7 @@ Name: Has Internet, dtype: float64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[251]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[53]:</div>
 
 
 
@@ -17207,7 +17271,7 @@ Name: Has Internet, dtype: float64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[55]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[54]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df_all</span><span class="p">[</span><span class="s2">&quot;No High School&quot;</span><span class="p">],</span> <span class="n">df_all</span><span class="p">[</span><span class="s2">&quot;No Internet&quot;</span><span class="p">])</span>
@@ -17251,7 +17315,7 @@ Name: Has Internet, dtype: float64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[56]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[55]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">df_all</span><span class="p">[</span><span class="s2">&quot;Non-White&quot;</span><span class="p">],</span> <span class="n">df_all</span><span class="p">[</span><span class="s2">&quot;No Internet&quot;</span><span class="p">])</span>
@@ -17312,7 +17376,7 @@ Name: Has Internet, dtype: float64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[248]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[56]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">8</span><span class="p">),</span> <span class="n">tight_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -17352,13 +17416,13 @@ Name: Has Internet, dtype: float64</pre>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[248]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[56]:</div>
 
 
 
 
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>&lt;matplotlib.patches.Ellipse at 0x7f8b6daebee0&gt;</pre>
+<pre>&lt;matplotlib.patches.Ellipse at 0x7f0d5d0ce250&gt;</pre>
 </div>
 
 </div>
@@ -17399,7 +17463,7 @@ Name: Has Internet, dtype: float64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[245]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[57]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">moe</span> <span class="o">=</span> <span class="n">internet</span><span class="p">[[</span><span class="s2">&quot;TRACTA&quot;</span><span class="p">,</span> <span class="s2">&quot;AIQBE013&quot;</span><span class="p">,</span> <span class="s2">&quot;AIQBM013&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
@@ -17413,7 +17477,7 @@ Name: Has Internet, dtype: float64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[246]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[58]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">moe</span> <span class="o">=</span> <span class="n">moe</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;AIQBE013&quot;</span><span class="p">:</span><span class="s2">&quot;No Internet&quot;</span><span class="p">,</span> <span class="s2">&quot;AIQBM013&quot;</span><span class="p">:</span><span class="s2">&quot;MOE&quot;</span><span class="p">})</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;TRACTA&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span>
@@ -17428,7 +17492,7 @@ Name: Has Internet, dtype: float64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[247]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[59]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
@@ -17480,6 +17544,18 @@ Name: Has Internet, dtype: float64</pre>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h3>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We have determined the following answers to our questions:
+Given the clear issues caused by lack of internet access, in our project, our primary goal is to answer the questions:</p>
+<ol>
+<li><strong>How accessible is internet to residents of Orleans Parish in their homes?</strong> We estimate that 70.7% of Orleans Parish households have access to internet compared to 83.8% of households nationally, though the distribution of internet access is relatively equal throughout the parish based on the box plot (in exploratory analysis) and map (in the previous section).</li>
+<li><strong>Are public internet access points distributed in a manner that optimizes access to those who lack access in their homes?</strong>  Free public internet access points do not appear to be distributed in an optimal manner for those who lack access to internet in their homes. If the city were to build more locations that provide internet services, we would recommend they be built in the areas that are circled in our Availibility of Internet map.</li>
+</ol>
+<p>Furthermore, we have confirmed statistically significant correlation between the proportion of the census tract without access to internet and the proportion of the census tract without a high school degree, median income, and the proportion of the tract that is not white. These correlations along with the studies linked in the introduction demonstrate that improving internet access for residents of Orleans Parish is important for reducing the cycle of poverty and the effects of systemic racism.</p>
+
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
